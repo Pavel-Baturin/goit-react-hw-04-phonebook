@@ -24,7 +24,9 @@ function ContactForm({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(this.state);
+    onSubmit({ name, number });
+    setName('');
+    setNumber('');
   };
 
   return (
