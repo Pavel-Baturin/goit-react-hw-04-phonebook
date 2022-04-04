@@ -11,7 +11,10 @@ function App() {
   );
   const [filter, setFilter] = useState('');
 
-  useEffect(() => localStorage.setItem('contacts', JSON.stringify(contacts)));
+  useEffect(
+    () => localStorage.setItem('contacts', JSON.stringify(contacts)),
+    [contacts]
+  );
 
   const deleteContact = contactId => {
     setContacts(contacts =>
